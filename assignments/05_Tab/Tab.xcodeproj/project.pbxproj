@@ -22,6 +22,7 @@
 		4EC49AAE1722F6E000D4EA22 /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC49AAD1722F6E000D4EA22 /* UserDefaults.m */; };
 		4EC49AB11722FF0100D4EA22 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC49AAF1722FDF300D4EA22 /* CoreLocation.framework */; };
 		4EC49AB3172305F700D4EA22 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC49AB2172305F700D4EA22 /* MapKit.framework */; };
+		4EC49AB51723278300D4EA22 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC49AB41723278300D4EA22 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		4EC49AAD1722F6E000D4EA22 /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
 		4EC49AAF1722FDF300D4EA22 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4EC49AB2172305F700D4EA22 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4EC49AB41723278300D4EA22 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EC49AB51723278300D4EA22 /* CoreMotion.framework in Frameworks */,
 				4EC49AB3172305F700D4EA22 /* MapKit.framework in Frameworks */,
 				4EC49AB11722FF0100D4EA22 /* CoreLocation.framework in Frameworks */,
 				4EC49A881722F5E000D4EA22 /* UIKit.framework in Frameworks */,
@@ -68,6 +71,7 @@
 		4EC49A7B1722F5E000D4EA22 = {
 			isa = PBXGroup;
 			children = (
+				4EC49AB41723278300D4EA22 /* CoreMotion.framework */,
 				4EC49AB2172305F700D4EA22 /* MapKit.framework */,
 				4EC49AAF1722FDF300D4EA22 /* CoreLocation.framework */,
 				4EC49A8D1722F5E000D4EA22 /* Tab */,

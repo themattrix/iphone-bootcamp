@@ -20,6 +20,7 @@
 		4EC49AA81722F6C000D4EA22 /* CoreLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC49AA71722F6C000D4EA22 /* CoreLocation.m */; };
 		4EC49AAB1722F6CF00D4EA22 /* CoreMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC49AAA1722F6CF00D4EA22 /* CoreMotion.m */; };
 		4EC49AAE1722F6E000D4EA22 /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC49AAD1722F6E000D4EA22 /* UserDefaults.m */; };
+		4EC49AB11722FF0100D4EA22 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC49AAF1722FDF300D4EA22 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		4EC49AAA1722F6CF00D4EA22 /* CoreMotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreMotion.m; sourceTree = "<group>"; };
 		4EC49AAC1722F6E000D4EA22 /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
 		4EC49AAD1722F6E000D4EA22 /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
+		4EC49AAF1722FDF300D4EA22 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EC49AB11722FF0100D4EA22 /* CoreLocation.framework in Frameworks */,
 				4EC49A881722F5E000D4EA22 /* UIKit.framework in Frameworks */,
 				4EC49A8A1722F5E000D4EA22 /* Foundation.framework in Frameworks */,
 				4EC49A8C1722F5E000D4EA22 /* CoreGraphics.framework in Frameworks */,
@@ -62,6 +65,7 @@
 		4EC49A7B1722F5E000D4EA22 = {
 			isa = PBXGroup;
 			children = (
+				4EC49AAF1722FDF300D4EA22 /* CoreLocation.framework */,
 				4EC49A8D1722F5E000D4EA22 /* Tab */,
 				4EC49A861722F5E000D4EA22 /* Frameworks */,
 				4EC49A851722F5E000D4EA22 /* Products */,

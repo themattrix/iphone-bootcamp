@@ -46,23 +46,20 @@
 {
     /* This creates a new cells as they come into view. */
     
-    // this can be anything unique to this table (and we only have one table)
+    // this can be anything unique to this table (and we only have one table), but it must match the 'Identifier' field in the prototype cell.
     static NSString *tableId = @"tableId";
     
     // determine if there were any out-of-view cells that we can reuse
+    // if not, but there *is* a prototype cell, use that instead.
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableId];
-    
-    // if no cells are available to reuse, create a new cell
-    if (cell == nil)
-    {
-        // create with 'reuseIdentifier' so that it's stored in the cell cache by an identifier
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableId];
-    }
     
     /* Always reset all of the cell properties so that reused cells don't show up with stale data. */
     
-     NSUInteger row = [indexPath row];
-    cell.textLabel.text = [self.mList objectAtIndex:row];
+    cell.textLabel.text = [self.mList objectAtIndex:[indexPath row]];
+    
+    // TODO: maybe this should be something real
+    cell.detailTextLabel.text = @"";
+
     return cell;
 }
 

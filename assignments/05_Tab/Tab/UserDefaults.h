@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserDefaults : UIViewController
+@interface UserDefaults : UIViewController <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *persistTextField;
+
+- (IBAction)saveDataTouched:(id)sender;
 
 @end

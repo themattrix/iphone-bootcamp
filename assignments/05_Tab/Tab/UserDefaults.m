@@ -18,7 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -26,13 +26,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    // retrieve data
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    self.persistTextField.text = [def stringForKey:@"mySavedData"];
+    self.persistTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)saveDataTouched:(id)sender
+{
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    [def setObject:self.persistTextField.text forKey:@"mySavedData"];
+    [def synchronize];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.persistTextField resignFirstResponder];
+    return YES;
 }
 
 @end

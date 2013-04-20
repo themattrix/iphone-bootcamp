@@ -8,8 +8,10 @@
 
 #import "CoreLocation.h"
 
-@interface CoreLocation ()
-
+@interface CoreLocation () {
+    // a pin to mark the user's current location
+    MKPointAnnotation *point;
+}
 @end
 
 @implementation CoreLocation
@@ -29,6 +31,12 @@
     self.mLocationManager = [[CLLocationManager alloc] init];
     self.mLocationManager.delegate = self;
     self.mLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    // allocate the pin
+    point = [[MKPointAnnotation alloc] init];
+
+    // add the pin to the map
+    [self.mapView addAnnotation:point];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -43,6 +51,12 @@
         500);   // meters
 
     [self.mapView setRegion:region animated:YES];
+    
+    // set the pin's location
+    point.coordinate = newLocation.coordinate;
+    
+    // set the pin's title (shows up when tapping the pin)
+    point.title = @"I'm here!";
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error

@@ -45,28 +45,47 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="mLat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUn-tM-ECR">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Zxr-3O-aKE"/>
-                                    <constraint firstAttribute="width" constant="139" id="gJC-mB-1Ra"/>
+                                    <constraint firstAttribute="width" constant="139" type="user" id="gJC-mB-1Ra"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="mLong" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7s9-KU-YIW">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="O35-h7-a6R"/>
+                                    <constraint firstAttribute="width" constant="150" id="Z0H-dt-bhh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Latitute:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKz-cF-JQm">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" type="user" id="z0S-LL-Vrg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="mLong" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7s9-KU-YIW">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Z0H-dt-bhh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Longitude:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSD-uG-MkV">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="qUn-tM-ECR" firstAttribute="top" secondItem="P3c-yy-cMT" secondAttribute="top" constant="20" symbolic="YES" type="default" id="74G-Bs-pnq"/>
-                            <constraint firstItem="qUn-tM-ECR" firstAttribute="leading" secondItem="P3c-yy-cMT" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="G8N-Ud-z4N"/>
-                            <constraint firstItem="qUn-tM-ECR" firstAttribute="bottom" secondItem="7s9-KU-YIW" secondAttribute="bottom" type="default" id="NQQ-0C-Zi3"/>
-                            <constraint firstItem="7s9-KU-YIW" firstAttribute="top" secondItem="P3c-yy-cMT" secondAttribute="top" constant="20" symbolic="YES" type="default" id="tdj-63-gZr"/>
-                            <constraint firstAttribute="trailing" secondItem="7s9-KU-YIW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wqF-1G-NWw"/>
+                            <constraint firstItem="oKz-cF-JQm" firstAttribute="leading" secondItem="YSD-uG-MkV" secondAttribute="leading" type="default" id="3he-st-Fn4"/>
+                            <constraint firstItem="7s9-KU-YIW" firstAttribute="leading" secondItem="qUn-tM-ECR" secondAttribute="leading" type="user" id="9NT-rk-VMy"/>
+                            <constraint firstItem="7s9-KU-YIW" firstAttribute="top" secondItem="P3c-yy-cMT" secondAttribute="top" constant="133" id="DpN-Cs-V9O"/>
+                            <constraint firstItem="YSD-uG-MkV" firstAttribute="top" secondItem="oKz-cF-JQm" secondAttribute="bottom" constant="46" type="user" id="OM4-AE-frs"/>
+                            <constraint firstItem="oKz-cF-JQm" firstAttribute="top" secondItem="P3c-yy-cMT" secondAttribute="top" constant="76" id="R92-ie-Qt7"/>
+                            <constraint firstItem="qUn-tM-ECR" firstAttribute="top" secondItem="P3c-yy-cMT" secondAttribute="top" constant="66" id="Zt9-FY-6by"/>
+                            <constraint firstItem="7s9-KU-YIW" firstAttribute="leading" secondItem="YSD-uG-MkV" secondAttribute="trailing" constant="17" type="user" id="dl4-sD-3EL"/>
+                            <constraint firstItem="oKz-cF-JQm" firstAttribute="trailing" secondItem="YSD-uG-MkV" secondAttribute="trailing" type="user" id="jXX-EY-ovN"/>
+                            <constraint firstItem="oKz-cF-JQm" firstAttribute="leading" secondItem="P3c-yy-cMT" secondAttribute="leading" constant="23" id="m6e-VS-J8s"/>
+                            <constraint firstItem="qUn-tM-ECR" firstAttribute="leading" secondItem="oKz-cF-JQm" secondAttribute="trailing" constant="17" type="user" id="yiz-6V-8Ku"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Core Location" id="5Pt-sJ-gKF"/>
@@ -100,6 +119,24 @@
             <point key="canvasLocation" x="-319" y="147"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CoreLocation" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreLocation.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mLat" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mLong" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CoreMotion" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreMotion.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UserDefaults" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserDefaults.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

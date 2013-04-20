@@ -98,3 +98,7 @@ Testing
 
 You can automate GUI testing with the "Automation" instrument profile (Command-I). More advanced third-party tools are also available.
 
+
+Day 2 (2013-04-20)
+==================
+

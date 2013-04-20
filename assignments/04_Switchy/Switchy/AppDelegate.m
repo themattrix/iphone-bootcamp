@@ -15,7 +15,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    // viewDidLoad for this view will be called at this point.
     self.rootViewController = [[SwitchViewController alloc] initWithNibName:@"SwitchViewController" bundle:nil];
+    // The root view controller rarely changes after assigning the first time.
     self.window.rootViewController = self.rootViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

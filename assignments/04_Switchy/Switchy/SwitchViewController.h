@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) BadNewsViewController *badNewsViewController;
 @property (strong, nonatomic) GoodNewsViewController *goodNewsViewController;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 -(IBAction)switchViews:(id)sender;
 

@@ -34,29 +34,53 @@
     // give 'em the bad news first
     BadNewsViewController *badController = [[BadNewsViewController alloc] initWithNibName:@"BadNewsViewController" bundle:nil];
     self.badNewsViewController = badController;
-    [self.view insertSubview:badController.view atIndex:0];
+    [self.contentView insertSubview:badController.view atIndex:0];
+    self.badNewsViewController.view.frame = self.contentView.frame;
 }
 
 -(void)switchViews:(id)sender
 {
+    // If the good news view is on screen, switch to the bad news view - and vice-versa.
+    
+    // context:nil == current context
+    [UIView beginAnimations:@"flip views" context:nil];
+    // 0.5 second animation - any changes to the view will be animated over this duration.
+    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    // caching makes sense because we'll likely be switching many times
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.contentView cache:YES];
+    
+    
+    // self.goodNewsViewController.view.superview is checked for nil before self.goodNewsViewController is checked for nil to prove a point: calling any method on nil returns nil.
+    
+    // if superview is nil, the view is not on the screen
     if (self.goodNewsViewController.view.superview == nil)
     {
+        // ensure that the good news controller is instantiated
         if (self.goodNewsViewController == nil)
         {
             self.goodNewsViewController = [[GoodNewsViewController alloc] initWithNibName:@"GoodNewsViewController" bundle:nil];
         }
+        // replace the current view with the new one
         [self.badNewsViewController.view removeFromSuperview];
-        [self.view insertSubview:self.goodNewsViewController.view atIndex:0];
+        [self.contentView insertSubview:self.goodNewsViewController.view atIndex:0];
+        self.goodNewsViewController.view.frame = self.contentView.frame;
     }
     else
     {
+        // ensure that the bad news controller is instantiated
         if (self.badNewsViewController == nil)
         {
             self.badNewsViewController = [[BadNewsViewController alloc] initWithNibName:@"BadNewsViewController" bundle:nil];
         }
+        // replace the current view with the new one
         [self.goodNewsViewController.view removeFromSuperview];
-        [self.view insertSubview:self.badNewsViewController.view atIndex:0];
+        [self.contentView insertSubview:self.badNewsViewController.view atIndex:0];
+        self.badNewsViewController.view.frame = self.contentView.frame;
     }
+    
+    // perform the animations
+    [UIView commitAnimations];
 }
 
 - (void)didReceiveMemoryWarning

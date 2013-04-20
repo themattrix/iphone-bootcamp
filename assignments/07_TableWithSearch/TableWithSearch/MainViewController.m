@@ -66,8 +66,28 @@
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
         [self.myDataSource removeObjectAtIndex:indexPath.row];
-        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    // TODO: fixme
+    
+    NSObject *tmp = [self.myDataSource objectAtIndex:sourceIndexPath.row];
+    
+    [self.myDataSource setObject:[self.myDataSource objectAtIndex:destinationIndexPath.row] atIndexedSubscript:sourceIndexPath.row];
+
+    [self.myDataSource setObject:tmp atIndexedSubscript:destinationIndexPath.row];
+    
+    [tableView cellForRowAtIndexPath:sourceIndexPath].textLabel.text = [self.myDataSource objectAtIndex:sourceIndexPath.row];
+
+    [tableView cellForRowAtIndexPath:destinationIndexPath].textLabel.text = [self.myDataSource objectAtIndex:destinationIndexPath.row];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

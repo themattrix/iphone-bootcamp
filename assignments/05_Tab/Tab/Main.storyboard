@@ -73,17 +73,25 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xnG-tG-Iec">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="348" id="cyZ-cr-7hc"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="oKz-cF-JQm" firstAttribute="leading" secondItem="YSD-uG-MkV" secondAttribute="leading" type="default" id="3he-st-Fn4"/>
+                            <constraint firstItem="YSD-uG-MkV" firstAttribute="top" secondItem="P3c-yy-cMT" secondAttribute="top" constant="80" id="96J-4e-6IL"/>
                             <constraint firstItem="7s9-KU-YIW" firstAttribute="leading" secondItem="qUn-tM-ECR" secondAttribute="leading" type="user" id="9NT-rk-VMy"/>
-                            <constraint firstItem="7s9-KU-YIW" firstAttribute="top" secondItem="P3c-yy-cMT" secondAttribute="top" constant="133" id="DpN-Cs-V9O"/>
-                            <constraint firstItem="YSD-uG-MkV" firstAttribute="top" secondItem="oKz-cF-JQm" secondAttribute="bottom" constant="46" type="user" id="OM4-AE-frs"/>
-                            <constraint firstItem="oKz-cF-JQm" firstAttribute="top" secondItem="P3c-yy-cMT" secondAttribute="top" constant="76" id="R92-ie-Qt7"/>
-                            <constraint firstItem="qUn-tM-ECR" firstAttribute="top" secondItem="P3c-yy-cMT" secondAttribute="top" constant="66" id="Zt9-FY-6by"/>
+                            <constraint firstItem="oKz-cF-JQm" firstAttribute="top" secondItem="P3c-yy-cMT" secondAttribute="top" constant="30" id="GZW-bB-c2f"/>
+                            <constraint firstItem="qUn-tM-ECR" firstAttribute="top" secondItem="P3c-yy-cMT" secondAttribute="top" constant="20" symbolic="YES" type="default" id="UdA-7N-Fkd"/>
+                            <constraint firstItem="7s9-KU-YIW" firstAttribute="top" secondItem="qUn-tM-ECR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cRp-cu-zFg"/>
                             <constraint firstItem="7s9-KU-YIW" firstAttribute="leading" secondItem="YSD-uG-MkV" secondAttribute="trailing" constant="17" type="user" id="dl4-sD-3EL"/>
+                            <constraint firstAttribute="bottom" secondItem="xnG-tG-Iec" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="eCy-sf-1BC"/>
+                            <constraint firstItem="xnG-tG-Iec" firstAttribute="leading" secondItem="P3c-yy-cMT" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hnh-9u-Xh6"/>
                             <constraint firstItem="oKz-cF-JQm" firstAttribute="trailing" secondItem="YSD-uG-MkV" secondAttribute="trailing" type="user" id="jXX-EY-ovN"/>
+                            <constraint firstAttribute="trailing" secondItem="xnG-tG-Iec" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="m2x-Hd-yaG"/>
                             <constraint firstItem="oKz-cF-JQm" firstAttribute="leading" secondItem="P3c-yy-cMT" secondAttribute="leading" constant="23" id="m6e-VS-J8s"/>
                             <constraint firstItem="qUn-tM-ECR" firstAttribute="leading" secondItem="oKz-cF-JQm" secondAttribute="trailing" constant="17" type="user" id="yiz-6V-8Ku"/>
                         </constraints>
@@ -92,6 +100,7 @@
                     <connections>
                         <outlet property="mLat" destination="qUn-tM-ECR" id="Z4u-vK-JHh"/>
                         <outlet property="mLong" destination="7s9-KU-YIW" id="zVx-Cn-Ko0"/>
+                        <outlet property="mapView" destination="xnG-tG-Iec" id="xEv-MY-2t2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4E1-Gq-Wvp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -119,24 +128,6 @@
             <point key="canvasLocation" x="-319" y="147"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CoreLocation" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreLocation.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mLat" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mLong" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CoreMotion" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreMotion.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UserDefaults" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserDefaults.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

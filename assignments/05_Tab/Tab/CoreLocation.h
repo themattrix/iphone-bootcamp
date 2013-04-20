@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
 @interface CoreLocation : UIViewController <CLLocationManagerDelegate>
 
@@ -15,5 +16,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *mLat;
 @property (weak, nonatomic) IBOutlet UILabel *mLong;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end

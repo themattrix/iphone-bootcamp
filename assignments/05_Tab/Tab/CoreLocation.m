@@ -36,6 +36,13 @@
     CLLocation *newLocation = [locations lastObject];
     self.mLat.text = [NSString stringWithFormat:@"%g", newLocation.coordinate.latitude];
     self.mLong.text = [NSString stringWithFormat:@"%g", newLocation.coordinate.longitude];
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(
+        newLocation.coordinate,
+        500,    // meters
+        500);   // meters
+
+    [self.mapView setRegion:region animated:YES];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error

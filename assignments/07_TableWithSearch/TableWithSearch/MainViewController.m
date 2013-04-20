@@ -34,7 +34,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     NSURL *url = [NSURL URLWithString:@"http://www.icodeblog.com/samples/nsoperation/data.plist"];
-    self.myDataSource = [NSArray arrayWithContentsOfURL:url];
+    self.myDataSource = [[NSArray arrayWithContentsOfURL:url] mutableCopy];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +54,20 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.myDataSource.count;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        [self.myDataSource removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

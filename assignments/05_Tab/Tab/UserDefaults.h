@@ -10,7 +10,8 @@
 
 @interface UserDefaults : UIViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *persistTextField;
+@property (weak, nonatomic) IBOutlet UITextField *usernameField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 - (IBAction)saveDataTouched:(id)sender;
 

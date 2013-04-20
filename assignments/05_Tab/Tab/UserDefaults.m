@@ -29,8 +29,9 @@
 	
     // retrieve data
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    self.persistTextField.text = [def stringForKey:@"mySavedData"];
-    self.persistTextField.delegate = self;
+    self.usernameField.text = [def stringForKey:@"mySavedData"];
+    self.passwordField.delegate = self;
+    self.usernameField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,21 +42,34 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self.persistTextField resignFirstResponder];
+    [self.usernameField resignFirstResponder];
 }
 
 - (IBAction)saveDataTouched:(id)sender
 {
-    [self.persistTextField resignFirstResponder];
+    [self.usernameField resignFirstResponder];
     
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    [def setObject:self.persistTextField.text forKey:@"mySavedData"];
+    [def setObject:self.usernameField.text forKey:@"mySavedData"];
     [def synchronize];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [textField resignFirstResponder];
+    id next = [self.view viewWithTag:textField.tag + 1];
+    
+    if (next != nil)
+    {
+        [next becomeFirstResponder];
+    }
+    else
+    {
+        /* whatever code needs to run on [GO] here */
+        
+        // close keyboard
+        [textField resignFirstResponder];
+    }
+    
     return YES;
 }
 

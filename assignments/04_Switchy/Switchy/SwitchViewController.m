@@ -36,6 +36,19 @@
     self.badNewsViewController = badController;
     [self.contentView insertSubview:badController.view atIndex:0];
     self.badNewsViewController.view.frame = self.contentView.frame;
+    
+    // add gesture recognizer
+    UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] init];
+    
+    // set up properties of the gesture recognizer
+    // since we're using a swipe recognizer, we need to add a direction
+    gesture.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
+    
+    // normally when selecting a method to send, it would have no arguments; in this case nil is sent as the argument.
+    [gesture addTarget:self action:@selector(switchViews:)];
+    
+    // add this gesture recognizer to the content view
+    [self.contentView addGestureRecognizer:gesture];
 }
 
 -(void)switchViews:(id)sender

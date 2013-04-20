@@ -39,8 +39,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.persistTextField resignFirstResponder];
+}
+
 - (IBAction)saveDataTouched:(id)sender
 {
+    [self.persistTextField resignFirstResponder];
+    
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     [def setObject:self.persistTextField.text forKey:@"mySavedData"];
     [def synchronize];
@@ -48,7 +55,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [self.persistTextField resignFirstResponder];
+    [textField resignFirstResponder];
     return YES;
 }
 

@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UITableViewController
+@interface MainViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
+
+@property (strong, nonatomic) NSMutableArray *masterDataSource;
 
 @property (strong, nonatomic) NSMutableArray *myDataSource;
 

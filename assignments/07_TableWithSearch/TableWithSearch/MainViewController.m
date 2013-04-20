@@ -8,8 +8,9 @@
 
 #import "MainViewController.h"
 
-@interface MainViewController ()
-
+@interface MainViewController () {
+    BOOL inSearchMode;
+}
 @end
 
 @implementation MainViewController
@@ -33,14 +34,36 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    inSearchMode = NO;
+
     NSURL *url = [NSURL URLWithString:@"http://www.icodeblog.com/samples/nsoperation/data.plist"];
-    self.myDataSource = [[NSArray arrayWithContentsOfURL:url] mutableCopy];
+    self.masterDataSource = [[NSArray arrayWithContentsOfURL:url] mutableCopy];
+    self.myDataSource = [self.masterDataSource mutableCopy];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    NSPredicate *filter = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", searchText];
+    self.myDataSource = [[self.masterDataSource filteredArrayUsingPredicate:filter] mutableCopy];
+    [self.tableView reloadData];
+}
+
+- (void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller
+{
+    inSearchMode = YES;
+}
+
+- (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
+{
+    self.myDataSource = [self.masterDataSource mutableCopy];
+    [self.tableView reloadData];
+    inSearchMode = NO;
 }
 
 #pragma mark - Table view data source
@@ -65,36 +88,52 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        [self.myDataSource removeObjectAtIndex:indexPath.row];
+        id cell = [self.myDataSource objectAtIndex:indexPath.row];
+        
+        [self.myDataSource removeObject:cell];
+        [self.masterDataSource removeObject:cell];
+        
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     }
 }
 
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
-{
-    // TODO: fixme
-    
-    NSObject *tmp = [self.myDataSource objectAtIndex:sourceIndexPath.row];
-    
-    [self.myDataSource setObject:[self.myDataSource objectAtIndex:destinationIndexPath.row] atIndexedSubscript:sourceIndexPath.row];
-
-    [self.myDataSource setObject:tmp atIndexedSubscript:destinationIndexPath.row];
-    
-    [tableView cellForRowAtIndexPath:sourceIndexPath].textLabel.text = [self.myDataSource objectAtIndex:sourceIndexPath.row];
-
-    [tableView cellForRowAtIndexPath:destinationIndexPath].textLabel.text = [self.myDataSource objectAtIndex:destinationIndexPath.row];
-}
+// TODO: fixme
+//- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return YES;
+//}
+//
+//- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+//{
+//    NSObject *tmp = [self.myDataSource objectAtIndex:sourceIndexPath.row];
+//    
+//    [self.myDataSource setObject:[self.myDataSource objectAtIndex:destinationIndexPath.row] atIndexedSubscript:sourceIndexPath.row];
+//
+//    [self.myDataSource setObject:tmp atIndexedSubscript:destinationIndexPath.row];
+//
+//    // TODO: might be unnecessary - delete?
+//    [tableView reloadData];
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell;
+    
+    if (inSearchMode)
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+        if (cell == nil)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+    }
+    else
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    }
     
     cell.textLabel.text = [self.myDataSource objectAtIndex:indexPath.row];
     

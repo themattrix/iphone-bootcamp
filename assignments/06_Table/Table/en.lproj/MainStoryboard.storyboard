@@ -15,26 +15,47 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8JH-c4-Sup">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="tableId" textLabel="3A2-ax-fvW" detailTextLabel="dOg-rp-bEe" style="IBUITableViewCellStyleValue1" id="ckf-Pb-dD8">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="tableId" id="ckf-Pb-dD8" customClass="CustomCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3A2-ax-fvW">
-                                                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOg-rp-bEe">
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ReC-rG-QcP">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="77" id="ih8-mP-tiH"/>
+                                                    </constraints>
+                                                </switch>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S9p-RQ-vFW">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5Y-jc-zTW">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="48" id="FQA-hd-Sbc"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ReC-rG-QcP" secondAttribute="trailing" constant="20" type="default" id="7yh-id-EQC"/>
+                                            <constraint firstItem="S9p-RQ-vFW" firstAttribute="leading" secondItem="ckf-Pb-dD8" secondAttribute="leading" constant="20" type="default" id="NdS-Fh-wis"/>
+                                            <constraint firstItem="S9p-RQ-vFW" firstAttribute="centerY" secondItem="ckf-Pb-dD8" secondAttribute="centerY" type="default" id="QfD-9C-dXm"/>
+                                            <constraint firstItem="M5Y-jc-zTW" firstAttribute="centerY" secondItem="ReC-rG-QcP" secondAttribute="centerY" type="default" id="mIp-dm-TqX"/>
+                                            <constraint firstItem="M5Y-jc-zTW" firstAttribute="leading" secondItem="S9p-RQ-vFW" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="mvY-7P-Atk"/>
+                                            <constraint firstItem="ReC-rG-QcP" firstAttribute="top" secondItem="ckf-Pb-dD8" secondAttribute="top" constant="8" id="pdF-RJ-7aX"/>
+                                            <constraint firstItem="ReC-rG-QcP" firstAttribute="leading" secondItem="M5Y-jc-zTW" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="yFI-bL-yFs"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cellLabel" destination="M5Y-jc-zTW" id="N4Z-KY-B8a"/>
+                                            <outlet property="cellOnOff" destination="ReC-rG-QcP" id="u5U-CB-5Bx"/>
+                                            <outlet property="cellText" destination="S9p-RQ-vFW" id="AE1-RD-4T8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -56,14 +77,6 @@
             </objects>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

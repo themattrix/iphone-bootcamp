@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CustomCell.h"
 
 @interface ViewController ()
 
@@ -51,14 +52,13 @@
     
     // determine if there were any out-of-view cells that we can reuse
     // if not, but there *is* a prototype cell, use that instead.
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableId];
+    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:tableId];
     
     /* Always reset all of the cell properties so that reused cells don't show up with stale data. */
     
-    cell.textLabel.text = [self.mList objectAtIndex:[indexPath row]];
-    
-    // TODO: maybe this should be something real
-    cell.detailTextLabel.text = @"";
+    cell.cellText.text = [self.mList objectAtIndex:indexPath.row];
+    cell.cellLabel.text = [NSString stringWithFormat:@"%d", indexPath.row];
+    cell.cellOnOff.on = indexPath.row % 2;
 
     return cell;
 }

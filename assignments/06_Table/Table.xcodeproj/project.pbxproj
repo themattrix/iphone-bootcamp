@@ -18,6 +18,7 @@
 		4EC49AD9172331EC00D4EA22 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC49AD8172331EC00D4EA22 /* Default-568h@2x.png */; };
 		4EC49ADC172331EC00D4EA22 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EC49ADA172331EC00D4EA22 /* MainStoryboard.storyboard */; };
 		4EC49ADF172331EC00D4EA22 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC49ADE172331EC00D4EA22 /* ViewController.m */; };
+		4EC49AE717233BAD00D4EA22 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC49AE617233BAD00D4EA22 /* CustomCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		4EC49ADB172331EC00D4EA22 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4EC49ADD172331EC00D4EA22 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4EC49ADE172331EC00D4EA22 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4EC49AE517233BAD00D4EA22 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		4EC49AE617233BAD00D4EA22 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				4EC49ADD172331EC00D4EA22 /* ViewController.h */,
 				4EC49ADE172331EC00D4EA22 /* ViewController.m */,
 				4EC49AC9172331EC00D4EA22 /* Supporting Files */,
+				4EC49AE517233BAD00D4EA22 /* CustomCell.h */,
+				4EC49AE617233BAD00D4EA22 /* CustomCell.m */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				4EC49ACF172331EC00D4EA22 /* main.m in Sources */,
 				4EC49AD3172331EC00D4EA22 /* AppDelegate.m in Sources */,
 				4EC49ADF172331EC00D4EA22 /* ViewController.m in Sources */,
+				4EC49AE717233BAD00D4EA22 /* CustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +304,7 @@
 				4EC49AE4172331EC00D4EA22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

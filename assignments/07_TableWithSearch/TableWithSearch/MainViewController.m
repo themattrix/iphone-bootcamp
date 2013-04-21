@@ -7,10 +7,14 @@
 //
 
 #import "MainViewController.h"
+#import "Reachability.h"
 
 @interface MainViewController () {
     BOOL inSearchMode;
 }
+
+- (NSString *)documentsPath;
+
 @end
 
 @implementation MainViewController
@@ -22,6 +26,16 @@
         // Custom initialization
     }
     return self;
+}
+
+- (NSString *)documentsPath
+{
+    /* When saving data to iOS, there's only one directory (Documents) that your app can write to. Let's find it. */
+
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    // there should only be one object in iOS
+    return [paths lastObject];
 }
 
 - (void)viewDidLoad
@@ -37,7 +51,43 @@
     inSearchMode = NO;
 
     NSURL *url = [NSURL URLWithString:@"http://www.icodeblog.com/samples/nsoperation/data.plist"];
-    self.masterDataSource = [[NSArray arrayWithContentsOfURL:url] mutableCopy];
+    
+    Reachability *internetStatus = [Reachability reachabilityForInternetConnection];
+    NetworkStatus currentStatus = [internetStatus currentReachabilityStatus];
+    
+    if (currentStatus != NotReachable)
+    {
+        /* Internet connection available. */
+
+        self.masterDataSource = [[NSArray arrayWithContentsOfURL:url] mutableCopy];
+        
+        /* In the future, an internet connection may not be available. After downloading and populating the master data list, serialize it and write it to NVM. */
+        
+        NSData *masterSerialized = [NSKeyedArchiver archivedDataWithRootObject:self.masterDataSource];
+        
+        [masterSerialized writeToFile:[self.documentsPath stringByAppendingPathComponent:@"data.plist"] atomically:YES];
+    }
+    else
+    {
+        /* Internet connection NOT available - attempt to read from NVM. */
+        
+        // this will come back as nil if the file does not exist
+        NSData *masterSerialized = [NSData dataWithContentsOfFile:[self.documentsPath stringByAppendingPathComponent:@"data.plist"]];
+        
+        if (masterSerialized)
+        {
+            self.masterDataSource = [[NSKeyedUnarchiver unarchiveObjectWithData:masterSerialized] mutableCopy];
+        }
+        else
+        {
+            /* No internet connection AND no existing file. */
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No data available" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+            [alert show];
+        }
+    }
+
     self.myDataSource = [self.masterDataSource mutableCopy];
 }
 

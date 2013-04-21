@@ -18,6 +18,8 @@
 		4EC49B0B17233E3300D4EA22 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC49B0A17233E3300D4EA22 /* Default-568h@2x.png */; };
 		4EC49B1217233E6800D4EA22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EC49B1117233E6800D4EA22 /* Main.storyboard */; };
 		4EC49B1517233EEE00D4EA22 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC49B1417233EEE00D4EA22 /* MainViewController.m */; };
+		4EC73B6D1724375D00D9BB7D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC73B6C1724375D00D9BB7D /* Reachability.m */; };
+		4EC73B6F17243EBF00D9BB7D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC73B6E17243EBF00D9BB7D /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,9 @@
 		4EC49B1117233E6800D4EA22 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4EC49B1317233EEE00D4EA22 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		4EC49B1417233EEE00D4EA22 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		4EC73B6B1724375D00D9BB7D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		4EC73B6C1724375D00D9BB7D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		4EC73B6E17243EBF00D9BB7D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EC73B6F17243EBF00D9BB7D /* SystemConfiguration.framework in Frameworks */,
 				4EC49AF517233E3300D4EA22 /* UIKit.framework in Frameworks */,
 				4EC49AF717233E3300D4EA22 /* Foundation.framework in Frameworks */,
 				4EC49AF917233E3300D4EA22 /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +62,7 @@
 		4EC49AE817233E3300D4EA22 = {
 			isa = PBXGroup;
 			children = (
+				4EC73B6E17243EBF00D9BB7D /* SystemConfiguration.framework */,
 				4EC49AFA17233E3300D4EA22 /* TableWithSearch */,
 				4EC49AF317233E3300D4EA22 /* Frameworks */,
 				4EC49AF217233E3300D4EA22 /* Products */,
@@ -89,6 +96,8 @@
 				4EC49B1117233E6800D4EA22 /* Main.storyboard */,
 				4EC49B1317233EEE00D4EA22 /* MainViewController.h */,
 				4EC49B1417233EEE00D4EA22 /* MainViewController.m */,
+				4EC73B6B1724375D00D9BB7D /* Reachability.h */,
+				4EC73B6C1724375D00D9BB7D /* Reachability.m */,
 			);
 			path = TableWithSearch;
 			sourceTree = "<group>";
@@ -176,6 +185,7 @@
 				4EC49B0117233E3300D4EA22 /* main.m in Sources */,
 				4EC49B0517233E3300D4EA22 /* AppDelegate.m in Sources */,
 				4EC49B1517233EEE00D4EA22 /* MainViewController.m in Sources */,
+				4EC73B6D1724375D00D9BB7D /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

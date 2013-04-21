@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "RestaurantCell.h"
 
 @interface ViewController ()
 {
@@ -71,11 +72,13 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    RestaurantCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [[searchResults objectAtIndex:indexPath.row] objectForKey:@"name"];
+    cell.nameLabel.text = [[searchResults objectAtIndex:indexPath.row] objectForKey:@"name"];
     
-    cell.detailTextLabel.text = [[searchResults objectAtIndex:indexPath.row] objectForKey:@"address"];
+    cell.addressLabel.text = [[searchResults objectAtIndex:indexPath.row] objectForKey:@"address"];
+    
+    cell.phoneNumberLabel.text = [[searchResults objectAtIndex:indexPath.row] objectForKey:@"phone"];
     
     return cell;
 }

@@ -18,6 +18,7 @@
 		4EC73BC5172465CE00D9BB7D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC73BC4172465CE00D9BB7D /* Default-568h@2x.png */; };
 		4EC73BC8172465CE00D9BB7D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EC73BC6172465CE00D9BB7D /* MainStoryboard.storyboard */; };
 		4EC73BCB172465CE00D9BB7D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC73BCA172465CE00D9BB7D /* ViewController.m */; };
+		4EC73BD317246D7D00D9BB7D /* RestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC73BD217246D7D00D9BB7D /* RestaurantCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		4EC73BC7172465CE00D9BB7D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4EC73BC9172465CE00D9BB7D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4EC73BCA172465CE00D9BB7D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4EC73BD117246D7D00D9BB7D /* RestaurantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantCell.h; sourceTree = "<group>"; };
+		4EC73BD217246D7D00D9BB7D /* RestaurantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				4EC73BBD172465CD00D9BB7D /* AppDelegate.h */,
 				4EC73BBE172465CD00D9BB7D /* AppDelegate.m */,
 				4EC73BC6172465CE00D9BB7D /* MainStoryboard.storyboard */,
+				4EC73BD117246D7D00D9BB7D /* RestaurantCell.h */,
+				4EC73BD217246D7D00D9BB7D /* RestaurantCell.m */,
 				4EC73BC9172465CE00D9BB7D /* ViewController.h */,
 				4EC73BCA172465CE00D9BB7D /* ViewController.m */,
 				4EC73BB5172465CD00D9BB7D /* Supporting Files */,
@@ -176,6 +181,7 @@
 				4EC73BBB172465CD00D9BB7D /* main.m in Sources */,
 				4EC73BBF172465CD00D9BB7D /* AppDelegate.m in Sources */,
 				4EC73BCB172465CE00D9BB7D /* ViewController.m in Sources */,
+				4EC73BD317246D7D00D9BB7D /* RestaurantCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +304,7 @@
 				4EC73BD0172465CE00D9BB7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

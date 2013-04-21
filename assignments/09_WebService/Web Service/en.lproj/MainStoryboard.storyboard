@@ -39,31 +39,32 @@
                                                     <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="123456789" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dm4-XJ-QhO">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="1234567890" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="l0S-6l-06r">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="Qc3-RI-brp"/>
+                                                        <constraint firstAttribute="height" constant="32" id="atK-sE-Ljd"/>
+                                                        <constraint firstAttribute="width" constant="97" id="xR8-EP-6wd"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                                                </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="6xA-wp-ZXY" secondAttribute="bottom" constant="21" id="4ae-bD-Kx2"/>
-                                            <constraint firstItem="6xA-wp-ZXY" firstAttribute="top" secondItem="dm4-XJ-QhO" secondAttribute="top" type="default" id="6nx-dJ-c4Y"/>
                                             <constraint firstAttribute="trailing" secondItem="8J8-yq-kqz" secondAttribute="trailing" constant="20" type="default" id="873-vp-VaT"/>
                                             <constraint firstItem="8J8-yq-kqz" firstAttribute="top" secondItem="jPN-Ou-qcw" secondAttribute="top" constant="8" id="DiX-hU-Uho"/>
-                                            <constraint firstItem="dm4-XJ-QhO" firstAttribute="baseline" secondItem="6xA-wp-ZXY" secondAttribute="baseline" type="default" id="LWJ-Kz-ao0"/>
                                             <constraint firstItem="6xA-wp-ZXY" firstAttribute="leading" secondItem="jPN-Ou-qcw" secondAttribute="leading" constant="20" type="default" id="Pqh-db-xgz"/>
+                                            <constraint firstAttribute="bottom" secondItem="6xA-wp-ZXY" secondAttribute="bottom" constant="21" id="TDw-GJ-Jww"/>
+                                            <constraint firstAttribute="trailing" secondItem="l0S-6l-06r" secondAttribute="trailing" constant="25" id="ZBf-b0-Dze"/>
+                                            <constraint firstItem="l0S-6l-06r" firstAttribute="top" secondItem="jPN-Ou-qcw" secondAttribute="top" constant="38" id="brA-3b-eho"/>
                                             <constraint firstItem="8J8-yq-kqz" firstAttribute="leading" secondItem="jPN-Ou-qcw" secondAttribute="leading" constant="20" type="default" id="ffE-v7-4qa"/>
-                                            <constraint firstAttribute="trailing" secondItem="dm4-XJ-QhO" secondAttribute="trailing" constant="40" id="o0a-a7-qIt"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="addressLabel" destination="6xA-wp-ZXY" id="eNY-ay-dIi"/>
                                             <outlet property="nameLabel" destination="8J8-yq-kqz" id="zhK-ch-Mv1"/>
-                                            <outlet property="phoneNumberLabel" destination="dm4-XJ-QhO" id="k8J-XC-Vbo"/>
+                                            <outlet property="phoneNumberLabel" destination="l0S-6l-06r" id="qYX-qH-SFB"/>
                                             <segue destination="Ren-DY-kfM" kind="push" identifier="restaurantSegue" id="BI2-dS-gfW"/>
                                         </connections>
                                     </tableViewCell>
@@ -159,7 +160,7 @@
             <relationships>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="phoneNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="phoneNumberLabel" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">

@@ -1,9 +1,13 @@
+Chicago iPhone Bootcamp Notes
+-----------------------------
+
+Instructor: Arek Zarychi
+
 
 Day 1 (2013-04-19)
-==================
+------------------
 
-Objective-C
------------
+### Objective-C
 
 The "@" symbol indicates a "compiler directive". This means the text is replaced by the compiler with some other (usually longer) Objective-C code.
 
@@ -21,8 +25,7 @@ Most @property should be strong. Exceptions:
     - Primitive types should be "assign".
 
 
-Xcode Features, Workflow and Tips
----------------------------------
+### Xcode Features, Workflow and Tips
 
 Apple recommends 3-letter class prefix for shared code (libraries, frameworks, etc). This is to reduce possible conflicts to 2-letter class prefixes that Apple uses. Class prefixes are not really needed for non-shared code.
 
@@ -48,8 +51,7 @@ Objective-C (or iOS?) only frees memory on every touch event.
 To disable ARC for a file: Build Phases -> Compile Sources -> <file> -> Compiler Flags => "-fno-objc-arc"
 
 
-App Store
----------
+### App Store
 
 Because iPad/Universal apps are much less common than iPhone apps, they are given priority by Apple when approving for the app store. This results in iPad/Universal app submissions being processed by Apple in 2 to 3 days instead of 5 to 7 for iPhone.
 
@@ -58,8 +60,7 @@ Although older iOS versions can see incompatible newer apps in the app store, th
 The bundled app must have icon and launch images to submit to app store.
 
 
-Run-Time
---------
+### Run-Time
 
 An app launch must take less than 5 seconds or it is killed by iOS (that would be an outrageous amount of load time anyway).
 
@@ -68,8 +69,7 @@ The status bar can be *observed* for orientation changes of the device.
 NSNotificationCenter is the best option for interacting with remote servers (it works for background tasks).
 
 
-Debug
------
+### Debug
 
 Unrecognized selector => unknown method
 
@@ -93,14 +93,13 @@ Instead of right clicking and choosing the Delete Breakpoint option, you can jus
 Prefer breakpoint console output over NSLog console output. The breakpoint method does not involve changing code and will not be present in production code.
 
 
-Testing
--------
+### Testing
 
 You can automate GUI testing with the "Automation" instrument profile (Command-I). More advanced third-party tools are also available.
 
 
 Day 2 (2013-04-20)
-==================
+------------------
 
 Methods are compiled separately from objects and are not bound to them. Every method is compiled into a "selector" type (often abbreviated as SEL). Use @selector to select a method.
 
@@ -150,3 +149,42 @@ A "plist" is Apple's property list implementation (XML).
 A normal Search Bar scrolls with table by default (kind of like a first cell).
 
 Since NSStrings are immutable, Objective-C performs an optimization where all identical strings are stored in the same memory address.
+
+
+Day 3 (2013-04-21)
+------------------
+
+To determine internet access capabilities, use Apple's Reachability class (copy the Reachability.[hm] files into your project. These do not use ARC, so ARC will have to be disabled via compiler flag for these files. Alternatively, there are drop-in replacements online which DO use ARC. Example: https://github.com/tonymillion/Reachability
+
+When saving data to iOS, there's only one directory (Documents) that your app can write to. To find a reference to it, you can use something like this code (which is generated when selecting Core Data for a new project):
+
+    // Returns the URL to the application's Documents directory.
+    - (NSURL *)applicationDocumentsDirectory
+    {
+        return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    }
+
+An app can not exit without user's approval or Apple won't approve it.
+
+There's a "responder chain" property (it's a stack) onto which controls are pushed. When a touch happens inside a view, it looks through the responder chain, asking each control if it responds to a touch at the given coordinates. Therefore, last-added controls are queried first.
+
+Perform an HTTP GET with NSURLRequest. Perform an HTTP POST with NSMutableURLRequest.
+
+iOS 6 introduce a Social Framework (system-wide integration of Facebook and Twitter).
+
+If an outlet or action was deleted from the code but not the storyboard, an exception will occur at runtime.
+
+Various commercial push notification servers:
+    UrbanAirship: http://urbanairship.com/
+    Parse: https://www.parse.com/
+
+Xcode: 'Product -> Archive' will only be enabled when Scheme is set to iOS Device.
+
+Core data: Attributes must start with lower-case.
+
+NSPredicate is used for filtering.
+
+Core Data creates empty objects within its context for you to populate.
+
+Shortcut to create an array: @[]
+

@@ -20,6 +20,7 @@
 		4EC49B1517233EEE00D4EA22 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC49B1417233EEE00D4EA22 /* MainViewController.m */; };
 		4EC73B6D1724375D00D9BB7D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC73B6C1724375D00D9BB7D /* Reachability.m */; };
 		4EC73B6F17243EBF00D9BB7D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC73B6E17243EBF00D9BB7D /* SystemConfiguration.framework */; };
+		4EC73B721724443400D9BB7D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC73B711724443400D9BB7D /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		4EC73B6B1724375D00D9BB7D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4EC73B6C1724375D00D9BB7D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4EC73B6E17243EBF00D9BB7D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4EC73B701724443400D9BB7D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		4EC73B711724443400D9BB7D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 				4EC49B1417233EEE00D4EA22 /* MainViewController.m */,
 				4EC73B6B1724375D00D9BB7D /* Reachability.h */,
 				4EC73B6C1724375D00D9BB7D /* Reachability.m */,
+				4EC73B701724443400D9BB7D /* DetailViewController.h */,
+				4EC73B711724443400D9BB7D /* DetailViewController.m */,
 			);
 			path = TableWithSearch;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				4EC49B0517233E3300D4EA22 /* AppDelegate.m in Sources */,
 				4EC49B1517233EEE00D4EA22 /* MainViewController.m in Sources */,
 				4EC73B6D1724375D00D9BB7D /* Reachability.m in Sources */,
+				4EC73B721724443400D9BB7D /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

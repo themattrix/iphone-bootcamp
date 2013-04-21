@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "DetailViewController.h"
 #import "Reachability.h"
 
 @interface MainViewController () {
@@ -36,6 +37,37 @@
     
     // there should only be one object in iOS
     return [paths lastObject];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"goToDetail"])
+    {
+        // transitioning to the detail view
+        // source: segue.sourceViewController
+        // destination: segue.destinationViewController
+        
+        DetailViewController *destRef = segue.destinationViewController;
+        
+        // Destination view is *probably* not rehydrated at this point, so we can't set the label directly. Instead, we'll set a different property.
+        
+        UITableView *tableView;
+        
+        if (inSearchMode)
+        {
+            tableView = self.searchDisplayController.searchResultsTableView;
+        }
+        else
+        {
+            tableView = self.tableView;
+        }
+
+        // find the selected row in the table view
+        NSInteger selectedRow = [tableView indexPathForSelectedRow].row;
+
+        // given the selected row, find it in the data source and assign it to the destination detail text
+        destRef.detailText = [self.myDataSource objectAtIndex:selectedRow];
+    }
 }
 
 - (void)viewDidLoad
@@ -215,13 +247,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    if (inSearchMode)
+    {
+        [self performSegueWithIdentifier:@"goToDetail" sender:self];
+    }
 }
 
 @end

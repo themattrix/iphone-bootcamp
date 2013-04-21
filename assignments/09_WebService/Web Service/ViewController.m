@@ -8,12 +8,12 @@
 
 #import "ViewController.h"
 #import "RestaurantCell.h"
+#import "ReserveViewController.h"
 
 @interface ViewController ()
 {
     NSArray *searchResults;
 }
-
 @end
 
 @implementation ViewController
@@ -22,6 +22,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSInteger row = [self.tableView indexPathForSelectedRow].row;
+    NSString *url = [[searchResults objectAtIndex:row] objectForKey:@"mobile_reserve_url"];
+    ((ReserveViewController *)segue.destinationViewController).url = url;
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar

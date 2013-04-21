@@ -19,6 +19,7 @@
 		4EC73BC8172465CE00D9BB7D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EC73BC6172465CE00D9BB7D /* MainStoryboard.storyboard */; };
 		4EC73BCB172465CE00D9BB7D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC73BCA172465CE00D9BB7D /* ViewController.m */; };
 		4EC73BD317246D7D00D9BB7D /* RestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC73BD217246D7D00D9BB7D /* RestaurantCell.m */; };
+		4EC73BD6172470DE00D9BB7D /* ReserveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC73BD5172470DE00D9BB7D /* ReserveViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		4EC73BCA172465CE00D9BB7D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4EC73BD117246D7D00D9BB7D /* RestaurantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantCell.h; sourceTree = "<group>"; };
 		4EC73BD217246D7D00D9BB7D /* RestaurantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCell.m; sourceTree = "<group>"; };
+		4EC73BD4172470DE00D9BB7D /* ReserveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReserveViewController.h; sourceTree = "<group>"; };
+		4EC73BD5172470DE00D9BB7D /* ReserveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReserveViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				4EC73BC6172465CE00D9BB7D /* MainStoryboard.storyboard */,
 				4EC73BD117246D7D00D9BB7D /* RestaurantCell.h */,
 				4EC73BD217246D7D00D9BB7D /* RestaurantCell.m */,
+				4EC73BD4172470DE00D9BB7D /* ReserveViewController.h */,
+				4EC73BD5172470DE00D9BB7D /* ReserveViewController.m */,
 				4EC73BC9172465CE00D9BB7D /* ViewController.h */,
 				4EC73BCA172465CE00D9BB7D /* ViewController.m */,
 				4EC73BB5172465CD00D9BB7D /* Supporting Files */,
@@ -182,6 +187,7 @@
 				4EC73BBF172465CD00D9BB7D /* AppDelegate.m in Sources */,
 				4EC73BCB172465CE00D9BB7D /* ViewController.m in Sources */,
 				4EC73BD317246D7D00D9BB7D /* RestaurantCell.m in Sources */,
+				4EC73BD6172470DE00D9BB7D /* ReserveViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

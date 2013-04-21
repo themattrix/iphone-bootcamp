@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ugb-hf-l9d">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller - Search-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="etx-kD-UD7">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" rowHeight="85" id="jPN-Ou-qcw" customClass="RestaurantCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="85" id="jPN-Ou-qcw" customClass="RestaurantCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Restaurant Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8J8-yq-kqz">
@@ -32,7 +32,7 @@
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Restaurant address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="6xA-wp-ZXY">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="183" id="5az-Bp-YJT"/>
+                                                        <constraint firstAttribute="width" constant="181" id="0M9-2k-bm6"/>
                                                         <constraint firstAttribute="height" constant="21" id="mkh-9G-Ei5"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -41,10 +41,9 @@
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="123456789" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dm4-XJ-QhO">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="96" id="3BI-HV-Tkg"/>
-                                                        <constraint firstAttribute="height" constant="26" id="xrm-ne-JGp"/>
+                                                        <constraint firstAttribute="width" constant="80" id="Qc3-RI-brp"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -52,18 +51,20 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="dm4-XJ-QhO" firstAttribute="top" secondItem="jPN-Ou-qcw" secondAttribute="top" constant="41" id="6Mz-OT-K24"/>
+                                            <constraint firstAttribute="bottom" secondItem="6xA-wp-ZXY" secondAttribute="bottom" constant="21" id="4ae-bD-Kx2"/>
+                                            <constraint firstItem="6xA-wp-ZXY" firstAttribute="top" secondItem="dm4-XJ-QhO" secondAttribute="top" type="default" id="6nx-dJ-c4Y"/>
                                             <constraint firstAttribute="trailing" secondItem="8J8-yq-kqz" secondAttribute="trailing" constant="20" type="default" id="873-vp-VaT"/>
                                             <constraint firstItem="8J8-yq-kqz" firstAttribute="top" secondItem="jPN-Ou-qcw" secondAttribute="top" constant="8" id="DiX-hU-Uho"/>
+                                            <constraint firstItem="dm4-XJ-QhO" firstAttribute="baseline" secondItem="6xA-wp-ZXY" secondAttribute="baseline" type="default" id="LWJ-Kz-ao0"/>
                                             <constraint firstItem="6xA-wp-ZXY" firstAttribute="leading" secondItem="jPN-Ou-qcw" secondAttribute="leading" constant="20" type="default" id="Pqh-db-xgz"/>
                                             <constraint firstItem="8J8-yq-kqz" firstAttribute="leading" secondItem="jPN-Ou-qcw" secondAttribute="leading" constant="20" type="default" id="ffE-v7-4qa"/>
-                                            <constraint firstAttribute="bottom" secondItem="6xA-wp-ZXY" secondAttribute="bottom" constant="21" id="jSY-Vr-AB3"/>
-                                            <constraint firstAttribute="trailing" secondItem="dm4-XJ-QhO" secondAttribute="trailing" constant="20" type="default" id="qCV-wl-XlZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="dm4-XJ-QhO" secondAttribute="trailing" constant="40" id="o0a-a7-qIt"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="addressLabel" destination="6xA-wp-ZXY" id="eNY-ay-dIi"/>
                                             <outlet property="nameLabel" destination="8J8-yq-kqz" id="zhK-ch-Mv1"/>
                                             <outlet property="phoneNumberLabel" destination="dm4-XJ-QhO" id="k8J-XC-Vbo"/>
+                                            <segue destination="Ren-DY-kfM" kind="push" identifier="restaurantSegue" id="BI2-dS-gfW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -90,6 +91,7 @@
                             <constraint firstItem="CsL-Br-lrK" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="zf3-ln-nDy"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Search" id="0bk-xR-Jcr"/>
                     <connections>
                         <outlet property="tableView" destination="etx-kD-UD7" id="tdp-tg-sC6"/>
                     </connections>
@@ -97,10 +99,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Reserve View Controller - Reserve-->
+        <scene sceneID="Vfv-hl-OZs">
+            <objects>
+                <viewController id="Ren-DY-kfM" customClass="ReserveViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4RM-UH-Bgc">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qeS-8X-YJe">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qeS-8X-YJe" firstAttribute="top" secondItem="4RM-UH-Bgc" secondAttribute="top" type="default" id="DUt-Vf-EcU"/>
+                            <constraint firstItem="qeS-8X-YJe" firstAttribute="leading" secondItem="4RM-UH-Bgc" secondAttribute="leading" type="default" id="Qke-fm-x18"/>
+                            <constraint firstItem="qeS-8X-YJe" firstAttribute="trailing" secondItem="4RM-UH-Bgc" secondAttribute="trailing" type="default" id="ghe-bq-Wdc"/>
+                            <constraint firstItem="qeS-8X-YJe" firstAttribute="bottom" secondItem="4RM-UH-Bgc" secondAttribute="bottom" type="default" id="uh0-gc-7C5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reserve" id="U1o-15-EKw"/>
+                    <connections>
+                        <outlet property="reservationWebView" destination="qeS-8X-YJe" id="8Q7-bV-uDE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NLk-05-JYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488" y="104"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="D6r-1l-idy">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="ugb-hf-l9d" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oe6-hh-GAl">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="6Ue-99-FVv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XIk-AS-z8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-384" y="104"/>
+        </scene>
     </scenes>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ReserveViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReserveViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="reservationWebView" candidateClass="UIWebView"/>
+            </relationships>
         </class>
         <class className="RestaurantCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RestaurantCell.h"/>

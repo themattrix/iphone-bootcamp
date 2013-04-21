@@ -55,7 +55,7 @@
     NSFetchRequest *fetch = [[NSFetchRequest alloc] initWithEntityName:@"ReminderDate"];
     
     // refers to ReminderDate.date
-    NSPredicate *filter = [NSPredicate predicateWithFormat:@"SELF.date == %@", self.reminderDate.date];
+    NSPredicate *filter = [NSPredicate predicateWithFormat:@"(SELF.date >= %@) AND (self.date <= %@)", self.reminderDate.date, [self.reminderDate.date dateByAddingTimeInterval:60 * 60 * 24]];
 
     [fetch setPredicate:filter];
     

@@ -18,6 +18,7 @@
 }
 
 - (NSString *)priorityFromInt:(int)priority;
+- (void)loadData;
 
 @end
 
@@ -57,7 +58,16 @@
     
     AppDelegate *appDelegateRef = [UIApplication sharedApplication].delegate;
     ctx = appDelegateRef.managedObjectContext;
+}
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self loadData];
+}
+
+- (void)loadData
+{
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
     
     // core data read
@@ -68,6 +78,8 @@
     NSError *err = nil;
     
     dates = [ctx executeFetchRequest:fetch error:&err];
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning

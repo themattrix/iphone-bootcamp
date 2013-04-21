@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import <Social/Social.h>
-#import <MessageUI/MessageUI.h>
 
 @interface ViewController ()
 
@@ -56,6 +55,8 @@
 {
     MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init];
     
+    mail.mailComposeDelegate = self;
+    
     // mail setToRecipients:<#(NSArray *)#>
     // mail setSubject:<#(NSString *)#>
     // mail setMessageBody:<#(NSString *)#> isHTML:<#(BOOL)#>
@@ -64,6 +65,11 @@
     {
         [self presentViewController:mail animated:YES completion:nil];
     }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

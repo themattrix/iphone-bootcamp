@@ -97,24 +97,6 @@
     }
 }
 
-// TODO: fixme
-//- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return YES;
-//}
-//
-//- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
-//{
-//    NSObject *tmp = [self.myDataSource objectAtIndex:sourceIndexPath.row];
-//    
-//    [self.myDataSource setObject:[self.myDataSource objectAtIndex:destinationIndexPath.row] atIndexedSubscript:sourceIndexPath.row];
-//
-//    [self.myDataSource setObject:tmp atIndexedSubscript:destinationIndexPath.row];
-//
-//    // TODO: might be unnecessary - delete?
-//    [tableView reloadData];
-//}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";

@@ -30,8 +30,6 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"finger down");
-    
     currentlySelected = nil;
     
     BOOL inSquare = NO;
@@ -76,7 +74,6 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     currentlySelected.alpha = 1.0;
-    NSLog(@"finger up");
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -87,8 +84,6 @@
     CGPoint point = [touch locationInView:self.view];
     
     currentlySelected.center = point;
-    
-    NSLog(@"finger at %f and %f", point.x, point.y);
 }
 
 @end

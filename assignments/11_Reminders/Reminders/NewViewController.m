@@ -53,9 +53,15 @@
     
     // core data read
     NSFetchRequest *fetch = [[NSFetchRequest alloc] initWithEntityName:@"ReminderDate"];
+    NSCalendar * calendar = [NSCalendar currentCalendar];
     
-    // refers to ReminderDate.date
-    NSPredicate *filter = [NSPredicate predicateWithFormat:@"(SELF.date >= %@) AND (self.date <= %@)", self.reminderDate.date, [self.reminderDate.date dateByAddingTimeInterval:60 * 60 * 24]];
+    // Strip the time from the DatePicker NSDate
+    NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit)
+                                               fromDate:self.reminderDate.date];
+    
+    NSDate *midnightDate = [calendar dateFromComponents:components];
+    
+    NSPredicate *filter = [NSPredicate predicateWithFormat:@"SELF.date == %@",midnightDate];
 
     [fetch setPredicate:filter];
     
@@ -68,7 +74,7 @@
     {
         oneDate = [NSEntityDescription insertNewObjectForEntityForName:@"ReminderDate" inManagedObjectContext:ctx];
         
-        oneDate.date = self.reminderDate.date;
+        oneDate.date = midnightDate;
     }
     
     Reminder *oneReminder = [NSEntityDescription insertNewObjectForEntityForName:@"Reminder" inManagedObjectContext:ctx];
